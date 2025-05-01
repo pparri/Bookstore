@@ -54,3 +54,5 @@ USE bookstore;
 SHOW TABLES;
 DESCRIBE users;
 
+<button onclick="history.back()">⬅️ Go Back</button>
+

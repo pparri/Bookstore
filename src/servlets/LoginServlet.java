@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
             if (rs.next()) {
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
-                response.sendRedirect("index.html"); // o dashboard.html
+                response.sendRedirect("dashboard.html");
             } else {
                 response.setContentType("text/html");
                 PrintWriter out = response.getWriter();

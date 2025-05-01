@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Dashboard</title></head>
+<body>
+  <h2>Welcome to the Bookstore</h2>
+
+  <form action="/bookstore/search.html" method="GET">
+    <button type="submit">🔍 Search Books</button>
+  </form>
+  <br/>
+
+  <form action="/bookstore/my-reservations.html" method="GET">
+    <button type="submit">📦 My Reservations</button>
+  </form>
+  <br/>
+
+  <a href="/bookstore/admin-dashboard"><button>⚙️ Manage Books (Admins only)</button></a>
+  <br/>
+
+  <form action="/bookstore/logout" method="POST">
+    <button type="submit">🚪 Logout</button>
+  </form>
+</body>
+</html>
