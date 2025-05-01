@@ -101,3 +101,16 @@
 127.0.0.1 - - [01/May/2025:17:32:23 +0300] "GET /bookstore/welcome.html HTTP/1.1" 404 778
 127.0.0.1 - - [01/May/2025:17:33:33 +0300] "GET /bookstore/welcome.html HTTP/1.1" 200 202
 127.0.0.1 - - [01/May/2025:17:33:34 +0300] "GET /bookstore/index.html HTTP/1.1" 200 141
+127.0.0.1 - - [01/May/2025:17:38:23 +0300] "GET /bookstore/index.html HTTP/1.1" 304 -
+127.0.0.1 - - [01/May/2025:17:38:28 +0300] "GET /bookstore/login HTTP/1.1" 404 771
+127.0.0.1 - - [01/May/2025:17:38:42 +0300] "GET /bookstore/login HTTP/1.1" 405 752
+127.0.0.1 - - [01/May/2025:17:39:26 +0300] "GET /bookstore/login HTTP/1.1" 302 -
+127.0.0.1 - - [01/May/2025:17:39:26 +0300] "GET /bookstore/register.html HTTP/1.1" 200 454
+127.0.0.1 - - [01/May/2025:17:39:30 +0300] "GET /bookstore/login HTTP/1.1" 302 -
+127.0.0.1 - - [01/May/2025:17:39:30 +0300] "GET /bookstore/register.html HTTP/1.1" 304 -
+127.0.0.1 - - [01/May/2025:17:40:28 +0300] "GET /bookstore/login HTTP/1.1" 302 -
+127.0.0.1 - - [01/May/2025:17:40:29 +0300] "GET /bookstore/register.html HTTP/1.1" 200 454
+127.0.0.1 - - [01/May/2025:17:41:48 +0300] "GET /bookstore/login HTTP/1.1" 302 -
+127.0.0.1 - - [01/May/2025:17:41:48 +0300] "GET /bookstore/login.html HTTP/1.1" 200 377
+127.0.0.1 - - [01/May/2025:17:41:54 +0300] "POST /bookstore/login HTTP/1.1" 302 -
+127.0.0.1 - - [01/May/2025:17:41:54 +0300] "GET /bookstore/index.html HTTP/1.1" 200 141
