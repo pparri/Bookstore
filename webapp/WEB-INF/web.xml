@@ -84,12 +84,30 @@
     <servlet-name>AdminListBooksServlet</servlet-name>
     <servlet-class>servlets.AdminListBooksServlet</servlet-class>
   </servlet>
-  
+
   <servlet-mapping>
     <servlet-name>AdminListBooksServlet</servlet-name>
     <url-pattern>/admin-dashboard/list-books</url-pattern>
   </servlet-mapping>
 
+    <servlet>
+    <servlet-name>AdminListReservationsServlet</servlet-name>
+    <servlet-class>servlets.AdminListReservationsServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AdminListReservationsServlet</servlet-name>
+    <url-pattern>/admin-dashboard/view-reservations</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AdminDeleteReservationServlet</servlet-name>
+    <servlet-class>servlets.AdminDeleteReservationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminDeleteReservationServlet</servlet-name>
+    <url-pattern>/admin-dashboard/delete-reservation</url-pattern>
+  </servlet-mapping>
 
 </web-app>
 
