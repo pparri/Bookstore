@@ -5,20 +5,25 @@
   <h2>Welcome to the Bookstore</h2>
 
   <form action="/bookstore/dashboard/search-books.html" method="GET">
-    <button type="submit">🔍 Search Books</button>
+    <button type="submit">Search Books</button>
   </form>
   <br/>
 
   <form action="/bookstore/my-reservations.html" method="GET">
-    <button type="submit">📦 My Reservations</button>
+    <button type="submit">My Reservations</button>
   </form>
   <br/>
 
-  <a href="/bookstore/admin-dashboard"><button>⚙️ Manage Books (Admins only)</button></a>
+  <form action="/bookstore/cart/view" method="GET">
+    <button type="submit">View Cart</button>
+  </form>
+  <br/>
+
+  <a href="/bookstore/admin-dashboard"><button>Manage Books (Admins only)</button></a>
   <br/>
 
   <form action="/bookstore/logout" method="GET">
-    <button type="submit">🚪 Logout</button>
+    <button type="submit">Logout</button>
   </form>
 </body>
 </html>

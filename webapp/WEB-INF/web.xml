@@ -123,10 +123,33 @@
     <servlet-name>BookDetailServlet</servlet-name>
     <servlet-class>servlets.BookDetailServlet</servlet-class>
   </servlet>
+
   <servlet-mapping>
     <servlet-name>BookDetailServlet</servlet-name>
     <url-pattern>/dashboard/detailed-book</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <servlet-class>servlets.AddToCartServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <url-pattern>/cart/add</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ViewCartServlet</servlet-name>
+    <servlet-class>servlets.ViewCartServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ViewCartServlet</servlet-name>
+    <url-pattern>/cart/view</url-pattern>
+  </servlet-mapping>
+
+
 
 </web-app>
 
