@@ -143,12 +143,21 @@
     <servlet-name>ViewCartServlet</servlet-name>
     <servlet-class>servlets.ViewCartServlet</servlet-class>
   </servlet>
-  
+
   <servlet-mapping>
     <servlet-name>ViewCartServlet</servlet-name>
     <url-pattern>/cart/view</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>CheckoutCartServlet</servlet-name>
+    <servlet-class>servlets.CheckoutCartServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>CheckoutCartServlet</servlet-name>
+    <url-pattern>/cart/checkout</url-pattern>
+  </servlet-mapping>
 
 
 </web-app>
