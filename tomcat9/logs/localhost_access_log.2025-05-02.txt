@@ -1629,3 +1629,10 @@
 127.0.0.1 - - [02/May/2025:16:50:45 +0300] "GET /bookstore/login.html? HTTP/1.1" 200 586
 127.0.0.1 - - [02/May/2025:16:50:45 +0300] "GET /bookstore/css/style.css HTTP/1.1" 304 -
 127.0.0.1 - - [02/May/2025:16:50:47 +0300] "GET /bookstore/register.html? HTTP/1.1" 304 -
+127.0.0.1 - - [02/May/2025:16:50:49 +0300] "GET /bookstore/login.html? HTTP/1.1" 304 -
+127.0.0.1 - - [02/May/2025:16:50:49 +0300] "GET /bookstore/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [02/May/2025:16:50:52 +0300] "POST /bookstore/login HTTP/1.1" 302 -
+127.0.0.1 - - [02/May/2025:16:50:52 +0300] "GET /bookstore/dashboard.html HTTP/1.1" 200 852
+127.0.0.1 - - [02/May/2025:16:50:53 +0300] "GET /bookstore/logout? HTTP/1.1" 302 -
+127.0.0.1 - - [02/May/2025:16:50:53 +0300] "GET /bookstore/login.html HTTP/1.1" 304 -
+127.0.0.1 - - [02/May/2025:16:50:53 +0300] "GET /bookstore/css/style.css HTTP/1.1" 304 -
