@@ -45,6 +45,7 @@ public class ViewCartServlet extends HttpServlet {
 
             response.getWriter().println("</table>");
             response.getWriter().println("<p><strong>Total: " + total + " </strong></p>");
+            response.getWriter().println("<form method='POST' action='/bookstore/cart/checkout'>");
             response.getWriter().println("<button type='submit'>Confirm Reservation</button>");
             response.getWriter().println("</form>");
         }

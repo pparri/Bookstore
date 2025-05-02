@@ -30,8 +30,16 @@ public class AdminDashboardServlet extends HttpServlet {
             ResultSet rs = stmt.executeQuery();
 
             if (!rs.next() || !rs.getBoolean("is_admin")) {
-                rs.close(); stmt.close(); conn.close();
-                response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access denied.");
+                rs.close();
+                stmt.close();
+                conn.close();
+                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+                response.setContentType("text/html");
+                response.getWriter().println("<html><body>");
+                response.getWriter().println("<h2>Access Denied</h2>");
+                response.getWriter().println("<p>Only administrators can access this page.</p>");
+                response.getWriter().println("<a href='/bookstore/dashboard.html'>Back to Dashboard</a>");
+                response.getWriter().println("</body></html>");
                 return;
             }
 

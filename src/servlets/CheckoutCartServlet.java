@@ -9,12 +9,12 @@ import java.sql.*;
 import java.util.List;
 import model.CartItem;
 
-public class CheckoutServlet extends HttpServlet {
+public class CheckoutCartServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("/bookstore/view-cart");
+        response.sendRedirect("/bookstore/cart/view-cart");
     }
 
     @Override
@@ -24,7 +24,7 @@ public class CheckoutServlet extends HttpServlet {
         // Verificar sesión y usuario autenticado
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("username") == null) {
-            response.sendRedirect("login.html");
+            response.sendRedirect("bookstore/login.html");
             return;
         }
 
@@ -101,7 +101,7 @@ public class CheckoutServlet extends HttpServlet {
             response.getWriter().println("</body></html>");
 
             conn.close();
-            response.sendRedirect("bookstore/dashboard.html");
+            response.sendRedirect("/bookstore/dashboard/my-reservations");
 
         } catch (Exception e) {
             e.printStackTrace();

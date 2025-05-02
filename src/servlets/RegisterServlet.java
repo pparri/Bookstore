@@ -36,7 +36,7 @@ public class RegisterServlet extends HttpServlet {
                 "INSERT INTO users (username, password, email, is_admin) VALUES (?, ?, ?, ?)"
             );
             stmt.setString(1, username);
-            stmt.setString(2, password); // luego hay que cifrarlo
+            stmt.setString(2, password); // luego hay que cifrarlo aaaaaaaaa
             stmt.setString(3, email);
             stmt.setBoolean(4, isAdmin);
             stmt.executeUpdate();
@@ -48,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
 
-            response.sendRedirect("dashboard.html"); // o dashboard
+            response.sendRedirect("dashboard.html");
 
         } /*catch (Exception e) {
             e.printStackTrace();
@@ -59,7 +59,7 @@ public class RegisterServlet extends HttpServlet {
             response.setContentType("text/plain");
             PrintWriter out = response.getWriter();
             out.println("Registration failed:");
-            e.printStackTrace(out); // Mostrar todo el stacktrace en la web
+            e.printStackTrace(out);
         }
     }
 }
