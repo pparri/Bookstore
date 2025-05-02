@@ -36,6 +36,7 @@ public class AdminDashboardServlet extends HttpServlet {
                 response.setStatus(HttpServletResponse.SC_FORBIDDEN);
                 response.setContentType("text/html");
                 response.getWriter().println("<html><body>");
+                response.getWriter().println("<head><link rel=\"stylesheet\" type=\"text/css\" href=\"/bookstore/css/style.css\"></head>");
                 response.getWriter().println("<h2>Access Denied</h2>");
                 response.getWriter().println("<p>Only administrators can access this page.</p>");
                 response.getWriter().println("<a href='/bookstore/dashboard.html'>Back to Dashboard</a>");
