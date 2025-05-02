@@ -119,5 +119,14 @@
     <url-pattern>/dashboard/search-books</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>BookDetailServlet</servlet-name>
+    <servlet-class>servlets.BookDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookDetailServlet</servlet-name>
+    <url-pattern>/dashboard/detailed-book</url-pattern>
+  </servlet-mapping>
+
 </web-app>
 

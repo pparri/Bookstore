@@ -37,6 +37,7 @@ public class SearchBooksServlet extends HttpServlet {
                 response.getWriter().println("<tr><th>Title</th><th>Author</th><th>Price</th><th>Image</th></tr>");
 
                 while (rs.next()) {
+                    int bookId = rs.getInt("id");
                     response.getWriter().println("<tr>");
                     response.getWriter().println("<td>" + rs.getString("title") + "</td>");
                     response.getWriter().println("<td>" + rs.getString("author") + "</td>");
@@ -48,6 +49,7 @@ public class SearchBooksServlet extends HttpServlet {
                         response.getWriter().println("<td>—</td>");
                     }
                     response.getWriter().println("</tr>");
+                    response.getWriter().println("<td><a href='/bookstore/dashboard/detailed-book?id=" + bookId + "'>View detailes</a></td>");
                 }
                 response.getWriter().println("</table>");
             }
