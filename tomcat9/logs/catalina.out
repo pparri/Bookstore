@@ -10620,3 +10620,98 @@ NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED -
 02-May-2025 12:35:35.846 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/ROOT] has finished in [45] ms
 02-May-2025 12:35:35.850 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 02-May-2025 12:35:35.856 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [699] milliseconds
+02-May-2025 12:40:44.468 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+02-May-2025 12:40:44.469 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+02-May-2025 12:40:44.470 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+02-May-2025 12:40:44.479 SEVERE [main] org.apache.catalina.session.StandardManager.stopInternal Exception unloading sessions to persistent storage
+	java.io.FileNotFoundException: /home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/work/Catalina/localhost/bookstore/SESSIONS.ser (No such file or directory)
+		at java.base/java.io.FileOutputStream.open0(Native Method)
+		at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+		at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+		at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:118)
+		at org.apache.catalina.session.StandardManager.doUnload(StandardManager.java:292)
+		at org.apache.catalina.session.StandardManager.unload(StandardManager.java:258)
+		at org.apache.catalina.session.StandardManager.stopInternal(StandardManager.java:373)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:235)
+		at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:4723)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:235)
+		at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1219)
+		at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1208)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:76)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:814)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:235)
+		at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1219)
+		at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1208)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:76)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:814)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:235)
+		at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:468)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:235)
+		at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:919)
+		at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:235)
+		at org.apache.catalina.startup.Catalina.stop(Catalina.java:814)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:778)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+02-May-2025 12:40:44.483 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+02-May-2025 12:40:44.492 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+02-May-2025 12:40:46.732 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.104
+02-May-2025 12:40:46.735 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 4 2025 12:32:55 UTC
+02-May-2025 12:40:46.735 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.104.0
+02-May-2025 12:40:46.735 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+02-May-2025 12:40:46.735 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.11.0-21-generic
+02-May-2025 12:40:46.735 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-May-2025 12:40:46.735 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/jdk-22.0.2
+02-May-2025 12:40:46.735 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           22.0.2+9-70
+02-May-2025 12:40:46.735 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+02-May-2025 12:40:46.735 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9
+02-May-2025 12:40:46.736 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9
+02-May-2025 12:40:46.740 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+02-May-2025 12:40:46.740 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
+02-May-2025 12:40:46.740 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+02-May-2025 12:40:46.740 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+02-May-2025 12:40:46.740 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/conf/logging.properties
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.io.useCanonCaches=false
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9
+02-May-2025 12:40:46.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/temp
+02-May-2025 12:40:46.742 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+02-May-2025 12:40:46.948 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+02-May-2025 12:40:46.963 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [338] milliseconds
+02-May-2025 12:40:46.991 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+02-May-2025 12:40:46.991 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.104]
+02-May-2025 12:40:46.996 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/manager]
+02-May-2025 12:40:47.219 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-May-2025 12:40:47.251 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/manager] has finished in [254] ms
+02-May-2025 12:40:47.251 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/host-manager]
+02-May-2025 12:40:47.312 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-May-2025 12:40:47.314 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/host-manager] has finished in [63] ms
+02-May-2025 12:40:47.314 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/docs]
+02-May-2025 12:40:47.356 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-May-2025 12:40:47.357 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/docs] has finished in [43] ms
+02-May-2025 12:40:47.357 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/examples]
+02-May-2025 12:40:47.485 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-May-2025 12:40:47.513 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/examples] has finished in [156] ms
+02-May-2025 12:40:47.513 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/bookstore]
+02-May-2025 12:40:47.570 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-May-2025 12:40:47.575 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/bookstore] has finished in [62] ms
+02-May-2025 12:40:47.575 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/ROOT]
+02-May-2025 12:40:47.618 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-May-2025 12:40:47.619 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/ROOT] has finished in [44] ms
+02-May-2025 12:40:47.622 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+02-May-2025 12:40:47.628 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [663] milliseconds

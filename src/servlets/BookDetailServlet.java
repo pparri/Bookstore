@@ -61,7 +61,7 @@ public class BookDetailServlet extends HttpServlet {
                     response.getWriter().println("<input type='hidden' name='book_id' value='" + bookId + "'>");
                     response.getWriter().println("<label>Quantity: </label>");
                     response.getWriter().println("<input type='number' name='quantity' min='1' value='1'>");
-                    response.getWriter().println("<button type='submit'>🛒 Add to Cart</button>");
+                    response.getWriter().println("<button type='submit'>Add to Cart</button>");
                     response.getWriter().println("</form>");
                 }
 

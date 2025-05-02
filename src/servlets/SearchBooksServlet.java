@@ -28,7 +28,7 @@ public class SearchBooksServlet extends HttpServlet {
 
             response.setContentType("text/html");
             response.getWriter().println("<html><head><title>Search Results</title></head><body>");
-            response.getWriter().println("<h2>🔍 Search Results for \"" + query + "\"</h2>");
+            response.getWriter().println("<h2>Search Results for \"" + query + "\"</h2>");
 
             if (!rs.isBeforeFirst()) {
                 response.getWriter().println("<p>No books found.</p>");
@@ -49,7 +49,7 @@ public class SearchBooksServlet extends HttpServlet {
                         response.getWriter().println("<td>—</td>");
                     }
                     response.getWriter().println("</tr>");
-                    response.getWriter().println("<td><a href='/bookstore/dashboard/detailed-book?id=" + bookId + "'>View detailes</a></td>");
+                    response.getWriter().println("<td><a href='/bookstore/dashboard/detailed-book?id=" + bookId + "'>View detailed</a></td>");
                 }
                 response.getWriter().println("</table>");
             }
