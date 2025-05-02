@@ -109,5 +109,15 @@
     <url-pattern>/admin-dashboard/delete-reservation</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>SearchBooksServlet</servlet-name>
+    <servlet-class>servlets.SearchBooksServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SearchBooksServlet</servlet-name>
+    <url-pattern>/dashboard/search-books</url-pattern>
+  </servlet-mapping>
+
 </web-app>
 
