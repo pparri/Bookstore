@@ -19,7 +19,7 @@ public class AdminAddBookServlet extends HttpServlet {
 
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("username") == null) {
-            response.sendRedirect("../admin-dashboard");
+            response.sendRedirect("../login.html");
             return;
         }
 

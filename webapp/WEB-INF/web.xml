@@ -70,5 +70,15 @@
     <url-pattern>/admin-dashboard/add-book</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>AdminDeleteBookServlet</servlet-name>
+    <servlet-class>servlets.AdminDeleteBookServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>AdminDeleteBookServlet</servlet-name>
+    <url-pattern>/admin-dashboard/delete-book</url-pattern>
+  </servlet-mapping>
+
 </web-app>
 

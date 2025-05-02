@@ -2,16 +2,20 @@ package servlets;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
-import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 
 public class AdminDeleteBookServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
+        response.sendRedirect("delete-book.html");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("username") == null) {
@@ -22,24 +26,31 @@ public class AdminDeleteBookServlet extends HttpServlet {
         String username = (String) session.getAttribute("username");
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bookstore", "mysql", "mysql");
-            PreparedStatement stmt = conn.prepareStatement("SELECT is_admin FROM users WHERE username = ?");
-            stmt.setString(1, username);
-            ResultSet rs = stmt.executeQuery();
+            Class.forName("org.mariadb.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(
+                    "jdbc:mariadb://localhost:3306/bookstore", "mysql", "mysql");
+
+            PreparedStatement checkAdmin = conn.prepareStatement(
+                    "SELECT is_admin FROM users WHERE username = ?");
+            checkAdmin.setString(1, username);
+            ResultSet rs = checkAdmin.executeQuery();
 
             if (!rs.next() || !rs.getBoolean("is_admin")) {
-                rs.close(); stmt.close(); conn.close();
-                response.sendRedirect("../dashboard.html");
+                rs.close(); checkAdmin.close(); conn.close();
+                response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access denied.");
                 return;
             }
 
-            int id = Integer.parseInt(request.getParameter("id"));
-            PreparedStatement deleteStmt = conn.prepareStatement("DELETE FROM books WHERE id = ?");
-            deleteStmt.setInt(1, id);
-            deleteStmt.executeUpdate();
+            int bookId = Integer.parseInt(request.getParameter("book_id"));
 
-            deleteStmt.close(); rs.close(); stmt.close(); conn.close();
-            response.sendRedirect("list-books");
+            PreparedStatement delete = conn.prepareStatement(
+                    "DELETE FROM books WHERE id = ?");
+            delete.setInt(1, bookId);
+            delete.executeUpdate();
+
+
+            rs.close(); checkAdmin.close(); delete.close(); conn.close();
+            response.sendRedirect("../admin-dashboard.html");
 
         } catch (Exception e) {
             e.printStackTrace();
