@@ -36,8 +36,8 @@ public class MyReservationsServlet extends HttpServlet {
 
             response.setContentType("text/html");
             response.getWriter().println("<html><head>");
-            // "CSS"
             response.getWriter().println("<title>Dashboard</title>");
+            // CSS injected
             response.getWriter().println("<link rel='stylesheet' type='text/css' href='/bookstore/css/style.css'>");
             response.getWriter().println("</head><body>");
             response.getWriter().println("<h2>My Reservations</h2>");

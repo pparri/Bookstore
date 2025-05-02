@@ -16,7 +16,7 @@ public class DashboardServlet extends HttpServlet {
             return;
         }
 
-        // Si hay sesión, muestra welcome.html
+        // Dashboard entrance
         RequestDispatcher dispatcher = request.getRequestDispatcher("dashboard.html");
         dispatcher.forward(request, response);
     }

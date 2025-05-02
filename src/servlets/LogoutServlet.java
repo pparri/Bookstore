@@ -10,9 +10,10 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
-        HttpSession session = request.getSession(false); // no crea si no existe
+        HttpSession session = request.getSession(false);
         if (session != null) {
-            session.invalidate(); // destruye sesión
+            // Destroys session
+            session.invalidate();
         }
         response.sendRedirect("login.html");
     }
