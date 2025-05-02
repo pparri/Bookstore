@@ -10,7 +10,7 @@ public class AdminAddBookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("../add-book.html");
+        response.sendRedirect("add-book.html");
     }
 
     @Override
@@ -19,7 +19,7 @@ public class AdminAddBookServlet extends HttpServlet {
 
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("username") == null) {
-            response.sendRedirect("login.html");
+            response.sendRedirect("../admin-dashboard");
             return;
         }
 
@@ -45,26 +45,28 @@ public class AdminAddBookServlet extends HttpServlet {
             // Obtener parámetros del formulario
             String title = request.getParameter("title");
             String authors = request.getParameter("authors");
-            String imageUrl = request.getParameter("image_url");
+            String cover_image = request.getParameter("image_url");
             String description = request.getParameter("description");
             double price = Double.parseDouble(request.getParameter("price"));
             int quantity = Integer.parseInt(request.getParameter("quantity"));
 
             // Insertar libro
             PreparedStatement insert = conn.prepareStatement(
-                "INSERT INTO books (title, authors, image_url, description, price, quantity) " +
+                "INSERT INTO books (title, author, description, price, quantity, cover_image) " +
                 "VALUES (?, ?, ?, ?, ?, ?)"
             );
             insert.setString(1, title);
             insert.setString(2, authors);
-            insert.setString(3, imageUrl);
-            insert.setString(4, description);
-            insert.setDouble(5, price);
-            insert.setInt(6, quantity);
-            insert.executeUpdate();
+            insert.setString(3, description);
+            insert.setDouble(4, price);
+            insert.setInt(5, quantity);
+            insert.setString(6, cover_image);
 
+            response.setStatus(HttpServletResponse.SC_OK);
+            System.out.println("📘 POST recibido: añadiendo libro");
+            insert.executeUpdate();
             insert.close(); rs.close(); checkAdmin.close(); conn.close();
-            response.sendRedirect("admin-dashboard.html");
+            response.sendRedirect("/bookstore/admin-dashboard.html");
 
         } catch (Exception e) {
             e.printStackTrace();
