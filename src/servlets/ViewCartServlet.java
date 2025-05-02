@@ -21,6 +21,10 @@ public class ViewCartServlet extends HttpServlet {
         List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
         response.setContentType("text/html");
         response.getWriter().println("<html><head><title>Your Cart</title></head><body>");
+        response.getWriter().println("<html><head>");
+        response.getWriter().println("<title>Dashboard</title>");
+        response.getWriter().println("<link rel='stylesheet' type='text/css' href='/bookstore/css/style.css'>");
+        response.getWriter().println("</head><body>");
         response.getWriter().println("<h2>Your Cart</h2>");
 
         if (cart == null || cart.isEmpty()) {

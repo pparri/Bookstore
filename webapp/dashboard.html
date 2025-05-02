@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"><title>Dashboard</title></head>
+<head>
+  <meta charset="UTF-8"><title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="/bookstore/css/style.css">
+</head>
 <body>
   <h2>Welcome to the Bookstore</h2>
 
@@ -19,7 +22,9 @@
   </form>
   <br/>
 
-  <a href="/bookstore/admin-dashboard"><button>Manage Books (Admins only)</button></a>
+  <form action="/bookstore/admin-dashboard" method="GET">
+    <button type="submit">Manage Books (Admins only)</button>
+  </form>
   <br/>
 
   <form action="/bookstore/logout" method="GET">

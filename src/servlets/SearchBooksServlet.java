@@ -27,7 +27,7 @@ public class SearchBooksServlet extends HttpServlet {
             ResultSet rs = ps.executeQuery();
 
             response.setContentType("text/html");
-            response.getWriter().println("<html><head><title>Search Results</title></head><body>");
+            response.getWriter().println("<html><head><title>Search Results</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/bookstore/css/style.css\"></head><body>");
             response.getWriter().println("<h2>Search Results for \"" + query + "\"</h2>");
 
             if (!rs.isBeforeFirst()) {

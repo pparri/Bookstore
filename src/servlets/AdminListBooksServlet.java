@@ -39,7 +39,7 @@ public class AdminListBooksServlet extends HttpServlet {
             ResultSet rs = stmt.executeQuery("SELECT * FROM books");
 
             response.setContentType("text/html");
-            response.getWriter().println("<html><head><title>Book List</title></head><body>");
+            response.getWriter().println("<html><head><title>Book List</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/bookstore/css/style.css\"></head><body>");
             response.getWriter().println("<h2>All Books</h2>");
             response.getWriter().println("<table border='1'>");
             response.getWriter().println("<tr><th>ID</th><th>Title</th><th>Author</th><th>Price</th><th>Quantity</th><th>Image</th></tr>");

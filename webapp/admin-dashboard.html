@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="/bookstore/css/style.css">
 </head>
 <body>
   <h2>Admin Dashboard</h2>
 
-  <a href="/bookstore/admin-dashboard/add-book">
-    <button type="button">Add Book</button>
-  </a>
+  <form action="/bookstore/admin-dashboard/add-book" method="GET">
+    <button type="submit">Add Book</button>
+  </form>
   <br/>
+
 
   <form action="/bookstore/admin-dashboard/list-books" method="GET">
     <button type="submit">View All Books</button>

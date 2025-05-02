@@ -42,7 +42,7 @@ public class AdminListReservationsServlet extends HttpServlet {
             );
 
             response.setContentType("text/html");
-            response.getWriter().println("<html><head><title>Reservations</title></head><body>");
+            response.getWriter().println("<html><head><title>Reservations</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/bookstore/css/style.css\"></head><body>");
             response.getWriter().println("<h2>User Reservations</h2>");
             response.getWriter().println("<table border='1'>");
             response.getWriter().println("<tr><th>ID</th><th>User</th><th>Book</th><th>Date</th><th>Action</th></tr>");

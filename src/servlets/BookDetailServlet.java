@@ -38,7 +38,7 @@ public class BookDetailServlet extends HttpServlet {
             }
 
             response.setContentType("text/html");
-            response.getWriter().println("<html><head><title>Book Details</title></head><body>");
+            response.getWriter().println("<html><head><title>Book Details</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/bookstore/css/style.css\"></head><body>");
             response.getWriter().println("<h2>" + rs.getString("title") + "</h2>");
             response.getWriter().println("<p><strong>Author:</strong> " + rs.getString("author") + "</p>");
             response.getWriter().println("<p><strong>Description:</strong> " + rs.getString("description") + "</p>");

@@ -35,7 +35,11 @@ public class MyReservationsServlet extends HttpServlet {
             ResultSet rs = stmt.executeQuery();
 
             response.setContentType("text/html");
-            response.getWriter().println("<html><head><title>My Reservations</title></head><body>");
+            response.getWriter().println("<html><head>");
+            // "CSS"
+            response.getWriter().println("<title>Dashboard</title>");
+            response.getWriter().println("<link rel='stylesheet' type='text/css' href='/bookstore/css/style.css'>");
+            response.getWriter().println("</head><body>");
             response.getWriter().println("<h2>My Reservations</h2>");
 
             response.getWriter().println("<table border='1'>");
