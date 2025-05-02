@@ -10,7 +10,7 @@ public class AdminAddBookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("add-book.html");
+        response.sendRedirect("../add-book.html");
     }
 
     @Override
