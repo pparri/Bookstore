@@ -7,9 +7,9 @@
 - MariaDB (installed and running)
 - Web browser (Chrome, Firefox, etc.)
 
-- Clone or download the project to your local machine:
+- Clone, download or untar the project to your local machine:
 
-    git clone https://github.com/pparri/bookstore.git
+    git clone https://github.com/pparri/bookstore.git or untar the project
     cd bookstore
 
 - Import the bookstore database schema:
