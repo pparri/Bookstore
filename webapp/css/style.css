@@ -1,16 +1,24 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
-    padding: 20px;
     color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;         /* v */
+    justify-content: center;     /* h */
+    flex-direction: column;
+    text-align: center;
 }
+
 
 h2 {
     color: #222;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color:#4CAF50;
     color: white;
     padding: 10px 18px;
     border: none;
@@ -25,8 +33,9 @@ button:hover {
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 90%;
     margin-top: 10px;
+    margin: 0 auto;
 }
 
 th, td {
