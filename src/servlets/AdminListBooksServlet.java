@@ -2,17 +2,15 @@ package servlets;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
-import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 
 public class AdminListBooksServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-        
+            throws ServletException, IOException {
+
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("username") == null) {
             response.sendRedirect("../login.html");
@@ -23,47 +21,54 @@ public class AdminListBooksServlet extends HttpServlet {
 
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bookstore", "mysql", "mysql");
+            Connection conn = DriverManager.getConnection(
+                    "jdbc:mariadb://localhost:3306/bookstore", "mysql", "mysql");
 
-            PreparedStatement stmt = conn.prepareStatement("SELECT is_admin FROM users WHERE username = ?");
-            stmt.setString(1, username);
-            ResultSet rs = stmt.executeQuery();
+            PreparedStatement checkAdmin = conn.prepareStatement(
+                    "SELECT is_admin FROM users WHERE username = ?");
+            checkAdmin.setString(1, username);
+            ResultSet rsAdmin = checkAdmin.executeQuery();
 
-            if (!rs.next() || !rs.getBoolean("is_admin")) {
-                rs.close(); stmt.close(); conn.close();
-                response.sendRedirect("../dashboard.html");
+            if (!rsAdmin.next() || !rsAdmin.getBoolean("is_admin")) {
+                rsAdmin.close(); checkAdmin.close(); conn.close();
+                response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access denied.");
                 return;
             }
 
-            Statement bookStmt = conn.createStatement();
-            ResultSet books = bookStmt.executeQuery("SELECT * FROM books");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM books");
 
             response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-            out.println("<html><body><h2>Book List</h2><table border='1'>");
-            out.println("<tr><th>ID</th><th>Title</th><th>Authors</th><th>Image</th><th>Price</th><th>Qty</th><th>Actions</th></tr>");
+            response.getWriter().println("<html><head><title>Book List</title></head><body>");
+            response.getWriter().println("<h2>All Books</h2>");
+            response.getWriter().println("<table border='1'>");
+            response.getWriter().println("<tr><th>ID</th><th>Title</th><th>Author</th><th>Price</th><th>Quantity</th><th>Image</th></tr>");
 
-            while (books.next()) {
-                int id = books.getInt("id");
-                out.println("<tr>");
-                out.println("<td>" + id + "</td>");
-                out.println("<td>" + books.getString("title") + "</td>");
-                out.println("<td>" + books.getString("authors") + "</td>");
-                out.println("<td><img src='" + books.getString("image_url") + "' width='80'/></td>");
-                out.println("<td>" + books.getDouble("price") + "</td>");
-                out.println("<td>" + books.getInt("quantity") + "</td>");
-                out.println("<td><a href='delete-book?id=" + id + "'>❌ Delete</a></td>");
-                out.println("</tr>");
+            while (rs.next()) {
+                response.getWriter().println("<tr>");
+                response.getWriter().println("<td>" + rs.getInt("id") + "</td>");
+                response.getWriter().println("<td>" + rs.getString("title") + "</td>");
+                response.getWriter().println("<td>" + rs.getString("author") + "</td>");
+                response.getWriter().println("<td>" + rs.getDouble("price") + "</td>");
+                response.getWriter().println("<td>" + rs.getInt("quantity") + "</td>");
+                String image = rs.getString("cover_image");
+                if (image != null && !image.isEmpty()) {
+                    response.getWriter().println("<td><img src='" + image + "' width='50'></td>");
+                } else {
+                    response.getWriter().println("<td>—</td>");
+                }
+                response.getWriter().println("</tr>");
             }
 
-            out.println("</table><br><a href='../main.html'>⬅️ Back</a></body></html>");
+            response.getWriter().println("</table><br>");
+            response.getWriter().println("<a href='/bookstore/admin-dashboard.html'>Back to Dashboard</a>");
+            response.getWriter().println("</body></html>");
 
-            books.close(); bookStmt.close(); rs.close(); stmt.close(); conn.close();
+            rs.close(); stmt.close(); checkAdmin.close(); rsAdmin.close(); conn.close();
 
         } catch (Exception e) {
             e.printStackTrace();
-            response.getWriter().println("Error: " + e.getMessage());
+            response.getWriter().println("<p>Error: " + e.getMessage() + "</p>");
         }
     }
 }
-

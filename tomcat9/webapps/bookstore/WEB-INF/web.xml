@@ -74,11 +74,22 @@
     <servlet-name>AdminDeleteBookServlet</servlet-name>
     <servlet-class>servlets.AdminDeleteBookServlet</servlet-class>
   </servlet>
-  
+
   <servlet-mapping>
     <servlet-name>AdminDeleteBookServlet</servlet-name>
     <url-pattern>/admin-dashboard/delete-book</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AdminListBooksServlet</servlet-name>
+    <servlet-class>servlets.AdminListBooksServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>AdminListBooksServlet</servlet-name>
+    <url-pattern>/admin-dashboard/list-books</url-pattern>
+  </servlet-mapping>
+
 
 </web-app>
 
