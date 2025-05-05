@@ -15,6 +15,7 @@
 - Import the bookstore database schema:
 
     mariadb -u mysql -p bookstore < sql/schema.sql
+    (password is: "mysql")
 
 - Compile the project and deploy tomcat:
     

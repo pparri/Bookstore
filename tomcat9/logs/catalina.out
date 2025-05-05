@@ -16014,3 +16014,4 @@ NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED -
 05-May-2025 14:19:24.763 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/parri/Documents/FIB/erasmus+/electric/bookstore/tomcat9/webapps/ROOT] has finished in [40] ms
 05-May-2025 14:19:24.765 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 05-May-2025 14:19:24.771 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [652] milliseconds
+[ WARN] (http-nio-8080-exec-3) Error: 1062-23000: Duplicate entry 'a' for key 'username'
