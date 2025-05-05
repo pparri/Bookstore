@@ -18,6 +18,8 @@
 
 - Compile the project and deploy tomcat:
     
+    ./deploy_init.sh
+    For restarting use:
     ./deploy.sh
 
 - Access the app:
