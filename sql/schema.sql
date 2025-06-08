@@ -1,4 +1,4 @@
-CREATE DATABASE bookstore;
+-- CREATE DATABASE bookstore;
 USE bookstore;
 
 CREATE TABLE users (
@@ -28,6 +28,3 @@ CREATE TABLE reservations (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE
 );
-CREATE USER IF NOT EXISTS 'mysql'@'localhost' IDENTIFIED BY 'mysql';
-GRANT ALL PRIVILEGES ON bookstore.* TO 'mysql'@'localhost';
-FLUSH PRIVILEGES;

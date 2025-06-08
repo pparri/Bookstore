@@ -15,7 +15,7 @@
 
 - Create user and credentials
 
-    mariadb -u root -p < sql/credentials.sql
+    sudo mariadb -u root -p < sql/credentials.sql
 
 - Import the bookstore database schema:
 
