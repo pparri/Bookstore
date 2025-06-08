@@ -1,6 +1,6 @@
 package model;
 
-// Static no porque sino se comparte
+// It's not static, otherwise it would be shared among all instances
 public class CartItem {
     public int bookId;
     public String title;
@@ -14,6 +14,7 @@ public class CartItem {
         this.price = price;
     }
 
+    // get() functions
     public int getBookId() {
         return bookId;
     }

@@ -15,7 +15,7 @@
 
 - Create database, user and credentials
 
-    sudo mariadb < sql/init.sql
+    mariadb -u root p < sql/init.sql
 
 - Import the bookstore database schema:
 
@@ -27,7 +27,7 @@
     
     ./deploy_init.sh
 
-    For restarting use:
+    For restarting or any other issue use:
 
     ./deploy.sh
 
