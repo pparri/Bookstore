@@ -40,6 +40,7 @@ public class LoginServlet extends HttpServlet {
 
             ResultSet rs = stmt.executeQuery();
 
+            // If there is no resultSet, it means the info is wrong
             if (rs.next()) {
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);

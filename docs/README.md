@@ -13,6 +13,10 @@
 
     cd bookstore
 
+- Create user and credentials
+
+    mariadb -u root -p < sql/credentials.sql
+
 - Import the bookstore database schema:
 
     mariadb -u mysql -p bookstore < sql/schema.sql
@@ -24,7 +28,7 @@
     ./deploy_init.sh
 
     For restarting use:
-    
+
     ./deploy.sh
 
 - Access the app:
