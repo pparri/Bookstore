@@ -9,18 +9,22 @@
 
 - Clone, download or untar the project to your local machine:
 
-    git clone https://github.com/pparri/bookstore.git or untar the project
+    git clone https://github.com/pparri/bookstore.git
+
     cd bookstore
 
 - Import the bookstore database schema:
 
     mariadb -u mysql -p bookstore < sql/schema.sql
+
     **(password is: "mysql")
 
 - Compile the project and deploy tomcat:
     
     ./deploy_init.sh
+
     For restarting use:
+    
     ./deploy.sh
 
 - Access the app:

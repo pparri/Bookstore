@@ -32,3 +32,6 @@
 127.0.0.1 - - [08/Jun/2025:13:36:27 +0300] "GET /bookstore/admin-dashboard/add-book.html HTTP/1.1" 200 966
 127.0.0.1 - - [08/Jun/2025:13:36:28 +0300] "GET /bookstore/admin-dashboard.html HTTP/1.1" 200 938
 127.0.0.1 - - [08/Jun/2025:13:36:28 +0300] "GET /bookstore/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [08/Jun/2025:13:39:56 +0300] "GET /bookstore/login HTTP/1.1" 302 -
+127.0.0.1 - - [08/Jun/2025:13:39:56 +0300] "GET /bookstore/login.html HTTP/1.1" 200 632
+127.0.0.1 - - [08/Jun/2025:13:39:56 +0300] "GET /bookstore/css/style.css HTTP/1.1" 200 797
