@@ -13,9 +13,19 @@
 
     cd bookstore
 
-- Create user and credentials
+- Create database, user and credentials
 
-    sudo mariadb -u root -p < sql/credentials.sql
+    sudo mariadb
+
+    Then type all of this in terminal:
+
+    DROP DATABASE IF EXISTS bookstore;
+
+    DROP USER IF EXISTS 'mysql'@'localhost';
+
+    FLUSH PRIVILEGES;
+
+    EXIT;
 
 - Import the bookstore database schema:
 
