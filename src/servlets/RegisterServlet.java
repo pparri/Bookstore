@@ -1,3 +1,5 @@
+/* REGISTRATION */
+
 package servlets;
 
 import java.io.*;
@@ -10,7 +12,6 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Quitar el.html
         response.sendRedirect("register.html");
     }
 
@@ -32,11 +33,12 @@ public class RegisterServlet extends HttpServlet {
             Class.forName("org.mariadb.jdbc.Driver");
             Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
+            // Prepares all the info into the statement
             PreparedStatement stmt = conn.prepareStatement(
                 "INSERT INTO users (username, password, email, is_admin) VALUES (?, ?, ?, ?)"
             );
             stmt.setString(1, username);
-            stmt.setString(2, password); // luego hay que cifrarlo aaaaaaaaa
+            stmt.setString(2, password);
             stmt.setString(3, email);
             stmt.setBoolean(4, isAdmin);
             stmt.executeUpdate();
@@ -44,7 +46,7 @@ public class RegisterServlet extends HttpServlet {
             stmt.close();
             conn.close();
 
-            // Crear sesión tras registro
+            // Creates session after registration
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
 

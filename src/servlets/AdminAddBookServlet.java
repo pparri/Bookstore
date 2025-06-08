@@ -17,6 +17,7 @@ public class AdminAddBookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        // Checks wether username exists
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("username") == null) {
             response.sendRedirect("../login.html");
@@ -30,7 +31,7 @@ public class AdminAddBookServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(
                     "jdbc:mariadb://localhost:3306/bookstore", "mysql", "mysql");
 
-            // Verificar si el usuario es admin
+            // Checks if user is admin, otherwise cannot continue
             PreparedStatement checkAdmin = conn.prepareStatement(
                     "SELECT is_admin FROM users WHERE username = ?");
             checkAdmin.setString(1, username);
@@ -42,7 +43,7 @@ public class AdminAddBookServlet extends HttpServlet {
                 return;
             }
 
-            // Obtener parámetros del formulario
+            // Get parameters from the form
             String title = request.getParameter("title");
             String authors = request.getParameter("authors");
             String cover_image = request.getParameter("image_url");
@@ -50,7 +51,7 @@ public class AdminAddBookServlet extends HttpServlet {
             double price = Double.parseDouble(request.getParameter("price"));
             int quantity = Integer.parseInt(request.getParameter("quantity"));
 
-            // Insertar libro
+            // Add the book
             PreparedStatement insert = conn.prepareStatement(
                 "INSERT INTO books (title, author, description, price, quantity, cover_image) " +
                 "VALUES (?, ?, ?, ?, ?, ?)"

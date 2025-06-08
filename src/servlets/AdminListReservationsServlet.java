@@ -1,3 +1,5 @@
+/* ADMIN LIST RESERVATIONS */
+
 package servlets;
 
 import javax.servlet.*;
@@ -6,6 +8,7 @@ import java.io.IOException;
 import java.sql.*;
 
 public class AdminListReservationsServlet extends HttpServlet {
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

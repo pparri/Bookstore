@@ -1,3 +1,5 @@
+/* VIEW CART */
+
 package servlets;
 
 import javax.servlet.*;
@@ -18,6 +20,7 @@ public class ViewCartServlet extends HttpServlet {
             return;
         }
 
+        // Gets info from the cart and prints it (CSS injected into the dynamic html)
         List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
         response.setContentType("text/html");
         response.getWriter().println("<html><head><title>Your Cart</title></head><body>");

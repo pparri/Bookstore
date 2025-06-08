@@ -1,3 +1,5 @@
+/* ADMIN DELETE BOOK */
+
 package servlets;
 
 import javax.servlet.*;
@@ -43,13 +45,16 @@ public class AdminDeleteBookServlet extends HttpServlet {
 
             int bookId = Integer.parseInt(request.getParameter("book_id"));
 
+            // Delete sql statement
             PreparedStatement delete = conn.prepareStatement(
                     "DELETE FROM books WHERE id = ?");
             delete.setInt(1, bookId);
+            // Execute in order to update the db
             delete.executeUpdate();
 
 
             rs.close(); checkAdmin.close(); delete.close(); conn.close();
+            // Go back to admin dashboard
             response.sendRedirect("../admin-dashboard.html");
 
         } catch (Exception e) {

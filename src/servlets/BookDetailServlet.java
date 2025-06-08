@@ -1,3 +1,5 @@
+/* SHOW BOOK DETAILS */
+
 package servlets;
 
 import javax.servlet.*;
@@ -49,13 +51,14 @@ public class BookDetailServlet extends HttpServlet {
                 response.getWriter().println("<img src='" + image + "' width='150'><br>");
             }
 
-            // Si hay usuario logueado y no es admin
+            // Goes in if it's a logged user
             if (username != null) {
                 PreparedStatement isAdminStmt = conn.prepareStatement(
                     "SELECT is_admin FROM users WHERE username = ?");
                 isAdminStmt.setString(1, username);
                 ResultSet rsUser = isAdminStmt.executeQuery();
 
+                // Goes in if it's a ground user
                 if (rsUser.next() && !rsUser.getBoolean("is_admin")) {
                     response.getWriter().println("<form method='POST' action='/bookstore/cart/add'>");
                     response.getWriter().println("<input type='hidden' name='book_id' value='" + bookId + "'>");

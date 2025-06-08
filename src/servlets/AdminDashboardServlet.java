@@ -1,3 +1,5 @@
+/* ADMIN DASHBOARD */
+
 package servlets;
 
 import javax.servlet.*;
@@ -34,6 +36,7 @@ public class AdminDashboardServlet extends HttpServlet {
                 stmt.close();
                 conn.close();
                 response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+                // Generic html error if user is not admin
                 response.setContentType("text/html");
                 response.getWriter().println("<html><body>");
                 response.getWriter().println("<head><link rel=\"stylesheet\" type=\"text/css\" href=\"/bookstore/css/style.css\"></head>");

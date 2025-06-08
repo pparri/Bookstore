@@ -15,7 +15,7 @@
 - Import the bookstore database schema:
 
     mariadb -u mysql -p bookstore < sql/schema.sql
-    (password is: "mysql")
+    **(password is: "mysql")
 
 - Compile the project and deploy tomcat:
     
@@ -85,10 +85,10 @@ Admin:
 
 User:
 
-    GET /bookstore/dashboard – user dashboard
-    GET /bookstore/dashboard/search-books – search books by title/author
-    GET /bookstore/dashboard/detailed-book?bookId=... – view book details
-    POST /bookstore/cart/add – add book to cart
-    GET /bookstore/cart/view – view cart
-    POST /bookstore/cart/checkout – confirm cart / make reservation
-    GET /bookstore/dashboard/my-reservations – view personal reservations
+    GET /bookstore/dashboard - user dashboard
+    GET /bookstore/dashboard/search-books - search books by title/author
+    GET /bookstore/dashboard/detailed-book?bookId=... - view book details
+    POST /bookstore/cart/add - add book to cart
+    GET /bookstore/cart/view - view cart
+    POST /bookstore/cart/checkout - confirm cart / make reservation
+    GET /bookstore/dashboard/my-reservations - view personal reservations

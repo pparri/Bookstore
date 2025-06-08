@@ -1,3 +1,5 @@
+/* CHECKOUT FROM CART */
+
 package servlets;
 
 import model.CartItem;
@@ -21,7 +23,6 @@ public class CheckoutCartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Verificar sesión y usuario autenticado
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("username") == null) {
             response.sendRedirect("bookstore/login.html");
@@ -40,7 +41,6 @@ public class CheckoutCartServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(
                     "jdbc:mariadb://localhost:3306/bookstore", "mysql", "mysql");
 
-            // Obtener ID del usuario
             PreparedStatement getUserId = conn.prepareStatement("SELECT id FROM users WHERE username = ?");
             getUserId.setString(1, username);
             ResultSet rsUser = getUserId.executeQuery();
@@ -56,7 +56,7 @@ public class CheckoutCartServlet extends HttpServlet {
             rsUser.close();
             getUserId.close();
 
-            // Insertar reservas y actualizar stock
+            // Add reservations (parting from cart) and update stock
             for (CartItem item : cart) {
 
                 PreparedStatement checkStock = conn.prepareStatement("SELECT quantity FROM books WHERE id = ?");
@@ -91,7 +91,7 @@ public class CheckoutCartServlet extends HttpServlet {
                 updateStock.close();
             }
 
-            // Vaciar el carrito
+            // Remove cart's content
             session.removeAttribute("cart");
 
             response.setContentType("text/html");

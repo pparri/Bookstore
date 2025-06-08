@@ -1,3 +1,5 @@
+/* ADMIN DELETE RESERVATION */
+
 package servlets;
 
 import javax.servlet.*;
@@ -38,12 +40,13 @@ public class AdminDeleteReservationServlet extends HttpServlet {
 
             int reservationId = Integer.parseInt(request.getParameter("reservation_id"));
 
+            // Delete reservation
             PreparedStatement delete = conn.prepareStatement(
                     "DELETE FROM reservations WHERE id = ?");
             delete.setInt(1, reservationId);
             int rows = delete.executeUpdate();
 
-            System.out.println("🗑️ Reserva eliminada (ID=" + reservationId + "), filas afectadas: " + rows);
+            System.out.println("Reserva eliminada (ID=" + reservationId + "), filas afectadas: " + rows);
 
             delete.close(); rsAdmin.close(); checkAdmin.close(); conn.close();
 

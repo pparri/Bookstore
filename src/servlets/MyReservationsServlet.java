@@ -1,3 +1,5 @@
+/* MY RESERVATIONS */
+
 package servlets;
 
 import javax.servlet.*;
@@ -37,7 +39,7 @@ public class MyReservationsServlet extends HttpServlet {
             response.setContentType("text/html");
             response.getWriter().println("<html><head>");
             response.getWriter().println("<title>Dashboard</title>");
-            // CSS injected
+            // CSS injectedfor the dynamic html page
             response.getWriter().println("<link rel='stylesheet' type='text/css' href='/bookstore/css/style.css'>");
             response.getWriter().println("</head><body>");
             response.getWriter().println("<h2>My Reservations</h2>");
@@ -45,6 +47,7 @@ public class MyReservationsServlet extends HttpServlet {
             response.getWriter().println("<table border='1'>");
             response.getWriter().println("<tr><th>Title</th><th>Cover</th><th>Quantity</th><th>Date</th></tr>");
 
+            // Shows MyReservation info
             while (rs.next()) {
                 response.getWriter().println("<tr>");
                 response.getWriter().println("<td>" + rs.getString("title") + "</td>");

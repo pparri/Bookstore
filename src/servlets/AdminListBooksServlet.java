@@ -1,3 +1,5 @@
+/* ADMIN LIST BOOKS */
+
 package servlets;
 
 import javax.servlet.*;
@@ -38,12 +40,14 @@ public class AdminListBooksServlet extends HttpServlet {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM books");
 
+            // Generic static html for base page
             response.setContentType("text/html");
             response.getWriter().println("<html><head><title>Book List</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/bookstore/css/style.css\"></head><body>");
             response.getWriter().println("<h2>All Books</h2>");
             response.getWriter().println("<table border='1'>");
             response.getWriter().println("<tr><th>ID</th><th>Title</th><th>Author</th><th>Price</th><th>Quantity</th><th>Image</th></tr>");
 
+            // While more sets remaining (pointer not null), list all book info
             while (rs.next()) {
                 response.getWriter().println("<tr>");
                 response.getWriter().println("<td>" + rs.getInt("id") + "</td>");

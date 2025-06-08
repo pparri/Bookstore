@@ -1,10 +1,14 @@
+<!-- Deploymeny descriptor -->
+<!-- This works to configure how the app works inside the apache server -->
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="3.1">
 
+  <!-- Servlet declaration -->
   <servlet>
     <servlet-name>RegisterServlet</servlet-name>
     <servlet-class>servlets.RegisterServlet</servlet-class>
   </servlet>
 
+  <!-- Associates the servlets with an url -->
   <servlet-mapping>
     <servlet-name>RegisterServlet</servlet-name>
     <url-pattern>/register</url-pattern>
